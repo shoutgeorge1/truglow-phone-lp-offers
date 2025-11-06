@@ -389,6 +389,321 @@
             color: var(--contrast);
         }
         
+        /* Special Offers Section */
+        .specials-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f8fdfd 0%, #ffffff 50%, #f0f7f7 100%);
+        }
+        
+        .specials-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .specials-header h2 {
+            font-family: Lato, sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 45px;
+            letter-spacing: 0.45px;
+            line-height: 55px;
+            margin-bottom: 15px;
+            color: var(--contrast);
+        }
+        
+        .specials-header p {
+            font-family: Lato, sans-serif;
+            font-weight: 300;
+            font-size: 25px;
+            letter-spacing: 1.6px;
+            line-height: 40px;
+            color: var(--contrast-2);
+        }
+        
+        .specials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .special-card {
+            background: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08), 0 2px 10px rgba(66,190,180,0.1);
+            border: 1px solid rgba(66,190,180,0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .special-card:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(66,190,180,0.05) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .special-card:hover:before {
+            opacity: 1;
+        }
+        
+        .special-card:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #42BEB4 0%, #1e73be 50%, #42BEB4 100%);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .special-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(66,190,180,0.2), 0 5px 20px rgba(30,115,190,0.15);
+            border-color: rgba(66,190,180,0.3);
+        }
+        
+        .special-card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .special-icon {
+            font-size: 56px;
+            line-height: 1;
+            flex-shrink: 0;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+        
+        .special-title-group {
+            flex: 1;
+        }
+        
+        .special-card h3 {
+            font-family: Lato, sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 32px;
+            letter-spacing: 0.5px;
+            line-height: 42px;
+            margin-bottom: 12px;
+            color: var(--contrast);
+            background: linear-gradient(135deg, var(--contrast) 0%, var(--contrast-2) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .special-price {
+            font-family: Lato, sans-serif;
+            font-weight: 700;
+            font-size: 42px;
+            background: linear-gradient(135deg, #42BEB4 0%, #1e73be 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+        
+        .special-value {
+            font-family: Lato, sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            color: var(--contrast-2);
+            font-style: italic;
+            display: block;
+            margin-top: 5px;
+        }
+        
+        .special-card ul {
+            list-style: none;
+            margin: 30px 0;
+            padding: 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .special-card ul li {
+            padding: 14px 0;
+            padding-left: 35px;
+            position: relative;
+            font-family: Lato, sans-serif;
+            font-weight: 300;
+            font-size: 20px;
+            letter-spacing: 0.5px;
+            line-height: 32px;
+            color: var(--contrast);
+        }
+        
+        .special-card ul li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #42BEB4;
+            font-weight: 700;
+            font-size: 24px;
+            background: linear-gradient(135deg, rgba(66,190,180,0.1) 0%, rgba(30,115,190,0.1) 100%);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+        
+        .special-highlight {
+            background: linear-gradient(135deg, rgba(66,190,180,0.12) 0%, rgba(30,115,190,0.08) 100%);
+            padding: 18px 24px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 1px solid rgba(66,190,180,0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .special-highlight p {
+            font-family: Lato, sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 28px;
+            color: var(--contrast);
+            margin: 0;
+        }
+        
+        .special-savings {
+            display: inline-block;
+            color: #42BEB4;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-family: Lato, sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 10px 0 5px 0;
+            background: rgba(66,190,180,0.1);
+            border: 1px solid rgba(66,190,180,0.2);
+            pointer-events: none;
+        }
+        
+        .special-description {
+            font-family: Lato, sans-serif;
+            font-weight: 300;
+            font-size: 19px;
+            letter-spacing: 0.5px;
+            line-height: 30px;
+            color: var(--contrast);
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(66,190,180,0.15);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .special-cta {
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .special-cta-button {
+            display: inline-block;
+            color: #ffffff;
+            padding: 18px 36px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-family: Lato, sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 18px;
+            letter-spacing: 1.2px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .special-cta-button.cta-primary {
+            background: linear-gradient(135deg, #42BEB4 0%, #1e73be 100%);
+            box-shadow: 0 6px 20px rgba(66,190,180,0.3);
+        }
+        
+        .special-cta-button.cta-primary:hover,
+        .special-cta-button.cta-primary:focus {
+            box-shadow: 0 10px 30px rgba(66,190,180,0.4);
+            outline: 3px solid rgba(66,190,180,0.3);
+        }
+        
+        .special-cta-button.cta-secondary {
+            background: linear-gradient(135deg, #1e73be 0%, #42BEB4 100%);
+            box-shadow: 0 6px 20px rgba(30,115,190,0.3);
+        }
+        
+        .special-cta-button.cta-secondary:hover,
+        .special-cta-button.cta-secondary:focus {
+            box-shadow: 0 10px 30px rgba(30,115,190,0.4);
+            outline: 3px solid rgba(30,115,190,0.3);
+        }
+        
+        .special-cta-button.cta-accent {
+            background: linear-gradient(135deg, #42BEB4 0%, #2a9d8f 100%);
+            box-shadow: 0 6px 20px rgba(66,190,180,0.35);
+        }
+        
+        .special-cta-button.cta-accent:hover,
+        .special-cta-button.cta-accent:focus {
+            box-shadow: 0 10px 30px rgba(66,190,180,0.45);
+            outline: 3px solid rgba(66,190,180,0.35);
+        }
+        
+        .special-cta-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .special-cta-button:hover:before {
+            left: 100%;
+        }
+        
+        .special-cta-button:hover,
+        .special-cta-button:focus {
+            transform: translateY(-2px);
+        }
+        
+        .special-cta-button:active {
+            transform: translateY(0);
+        }
+        
         /* Savings Plan Section - matches #home-fifth-section */
         .savings-section {
             padding: 80px 20px;
@@ -734,6 +1049,94 @@
             .about-section {
                 background-attachment: scroll;
             }
+            
+            .specials-section {
+                padding: 60px 15px;
+            }
+            
+            .specials-header h2 {
+                font-size: 32px;
+                line-height: 42px;
+            }
+            
+            .specials-header p {
+                font-size: 20px;
+                line-height: 32px;
+            }
+            
+            .special-card {
+                padding: 35px 25px;
+                border-radius: 16px;
+            }
+            
+            .special-card-header {
+                gap: 15px;
+                margin-bottom: 25px;
+            }
+            
+            .special-icon {
+                font-size: 44px;
+            }
+            
+            .special-card h3 {
+                font-size: 24px;
+                line-height: 32px;
+                margin-bottom: 10px;
+            }
+            
+            .special-price {
+                font-size: 32px;
+            }
+            
+            .special-value {
+                font-size: 16px;
+            }
+            
+            .special-card ul li {
+                font-size: 18px;
+                line-height: 28px;
+                padding: 12px 0;
+                padding-left: 32px;
+            }
+            
+            .special-card ul li:before {
+                width: 24px;
+                height: 24px;
+                font-size: 20px;
+            }
+            
+            .special-highlight {
+                padding: 15px 18px;
+                margin: 20px 0;
+            }
+            
+            .special-highlight p {
+                font-size: 16px;
+                line-height: 24px;
+            }
+            
+            .special-description {
+                font-size: 17px;
+                line-height: 26px;
+                margin-top: 20px;
+                padding-top: 20px;
+            }
+            
+            .special-savings {
+                font-size: 14px;
+                padding: 5px 12px;
+            }
+            
+            .special-cta {
+                margin-top: 25px;
+            }
+            
+            .special-cta-button {
+                padding: 16px 24px;
+                font-size: 16px;
+                letter-spacing: 1px;
+                border-radius: 10px;
+            }
         }
         
         @media (min-width: 768px) {
@@ -747,6 +1150,10 @@
             
             .savings-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .specials-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
             
             .services-grid {
@@ -874,6 +1281,101 @@
                 <div class="service-card">
                     <img src="https://truglobeverlyhillsdentistry.com/wp-content/uploads/2025/11/invisalign.png" alt="Invisalign" class="service-icon" width="207" height="213">
                     <h3 class="service-title">Invisalign</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section class="specials-section">
+        <div class="container">
+            <div class="specials-header">
+                <h2>Limited Time Special Offers</h2>
+                <p>Experience TruGLO excellence with our exclusive packages</p>
+            </div>
+            <div class="specials-grid">
+                <!-- New Patient Glow Package -->
+                <div class="special-card">
+                    <div class="special-card-header">
+                        <div class="special-icon">🌟</div>
+                        <div class="special-title-group">
+                            <h3>New Patient Glow Package</h3>
+                            <div class="special-price">$199</div>
+                            <div class="special-value">($450 value)</div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Comprehensive exam</li>
+                        <li>Full-mouth X-rays</li>
+                        <li>Professional cleaning</li>
+                        <li>Complimentary digital smile analysis</li>
+                    </ul>
+                    <div class="special-highlight">
+                        <p><strong>Personalized treatment plan consultation included.</strong></p>
+                    </div>
+                    <div class="special-description">
+                        Perfect for patients who want to experience TruGLO care for the first time — our most popular starter package.
+                    </div>
+                    <div class="special-cta">
+                        <a href="tel:+13109191569" class="special-cta-button cta-primary track-call" aria-label="Reserve your New Patient Glow Package: 310.919.1569">
+                            Reserve Your Package
+                        </a>
+                    </div>
+                </div>
+
+                <!-- SuperGLO Whitening Special -->
+                <div class="special-card">
+                    <div class="special-card-header">
+                        <div class="special-icon">✨</div>
+                        <div class="special-title-group">
+                            <h3>SuperGLO Whitening Special</h3>
+                            <div class="special-price">$495</div>
+                            <div class="special-savings">Save $650</div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Doctor-designed in-office whitening session</li>
+                        <li>Oxygen-infused gel treatment</li>
+                        <li>Custom at-home whitening trays</li>
+                    </ul>
+                    <div class="special-highlight">
+                        <p><strong>Delivers up to 8 shades lighter in a single visit.</strong></p>
+                    </div>
+                    <div class="special-description">
+                        Members receive additional savings and complimentary touch-ups!
+                    </div>
+                    <div class="special-cta">
+                        <a href="tel:+13109191569" class="special-cta-button cta-secondary track-call" aria-label="Book your SuperGLO Whitening session: 310.919.1569">
+                            Book Your Transformation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TruVeneer Smile Design Package -->
+                <div class="special-card">
+                    <div class="special-card-header">
+                        <div class="special-icon">💋</div>
+                        <div class="special-title-group">
+                            <h3>TruVeneer Smile Design Package</h3>
+                            <div class="special-price">Starting at $1,000 <span class="special-value" style="font-size: 0.5em; font-weight: 400; color: var(--contrast-2);">per tooth</span></div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Digital smile mock-up</li>
+                        <li>Wax-up preview</li>
+                        <li>Customized shade and shape selection consultation</li>
+                    </ul>
+                    <div class="special-highlight">
+                        <p><strong>Save up to $1,000 on full-smile cases (8+ veneers)</strong></p>
+                    </div>
+                    <div class="special-description">
+                        Financing and membership discounts available.
+                    </div>
+                    <div class="special-cta">
+                        <a href="tel:+13109191569" class="special-cta-button cta-accent track-call" aria-label="Schedule your smile design consultation: 310.919.1569">
+                            Schedule Your Consultation
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
